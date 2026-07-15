@@ -8,7 +8,19 @@
 
 ## Introduction
 
-TODO: Introduce the extension and what problem it solves.
+Currently, OpenAPI only supports deprecation at the operation level via the deprecated: boolean field on Operation Objects. There is no standard way to signal that an entire API is being deprecated or sunset.
+
+This forces API providers to:
+
+Rely on prose in info.description (not machine-readable ???)
+Use non-standard x- extensions (not interoperable)
+Depend entirely on HTTP headers at runtime (consumers must actually call the API)
+Mark every single operation as deprecated individually
+Proposed Solution
+Add formal lifecycle management fields to OpenAPI, aligned with existing standards:
+
+RFC 8594: Sunset HTTP Header 
+IRFC 9745: Deprecation HTTP Header
 
 ## Relationship to the OpenAPI Specification
 
